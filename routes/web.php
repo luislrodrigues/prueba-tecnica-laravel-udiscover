@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,4 +29,18 @@ Route::controller(LoginController::class)->group(function(){
     Route::post('logout', 'logout')->name('logout');
 });
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+// Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// Route::resources([
+//     'company' => CompanyController::class,
+// ]);
+
+Route::controller(CompanyController::class)->group(function(){
+    Route::get('/','index')->name('company.index');
+    Route::get('/create','create')->name('company.create');
+    Route::post('/','store')->name('company.store');
+    Route::get('/{company}','show')->name('company.show');
+    Route::get('/{company}/edit','edit')->name('company.edit');
+    Route::put('/{company}','update')->name('company.update');
+    Route::delete('/{company}','destroy')->name('company.destroy');
+});
