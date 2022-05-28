@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -20,21 +21,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', function () {
     return view('auth.login');
 });
-
-// Auth::routes();
-
 Route::controller(LoginController::class)->group(function(){
     Route::get('login', 'showLoginForm')->name('login');
     Route::post('login', 'login');
     Route::post('logout', 'logout')->name('logout');
 });
-
-// Route::get('/', [HomeController::class, 'index'])->name('home');
-
-// Route::resources([
-//     'company' => CompanyController::class,
-// ]);
-
+Route::controller(EmployeeController::class)->group(function(){
+    Route::get('/employee','index')->name('employee.index');
+    Route::get('/employee/create','create')->name('employee.create');
+    Route::post('/employee','store')->name('employee.store');
+    Route::get('/employee/{employee}','show')->name('employee.show');
+    Route::get('/employee/{employee}/edit','edit')->name('employee.edit');
+    Route::put('/employee/{employee}','update')->name('employee.update');
+    Route::delete('/{employee}','destroy')->name('employee.destroy');
+});
 Route::controller(CompanyController::class)->group(function(){
     Route::get('/','index')->name('company.index');
     Route::get('/create','create')->name('company.create');
@@ -44,3 +44,6 @@ Route::controller(CompanyController::class)->group(function(){
     Route::put('/{company}','update')->name('company.update');
     Route::delete('/{company}','destroy')->name('company.destroy');
 });
+
+
+

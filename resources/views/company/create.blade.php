@@ -10,7 +10,7 @@
                 @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
-                    <input value="{{ old('name') }}" 
+                    <input 
                         type="text" 
                         class="form-control" 
                         name="name" 
@@ -21,7 +21,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input value="{{ old('email') }}"
+                    <input 
                         type="email" 
                         class="form-control" 
                         name="email" 
@@ -32,7 +32,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="pagina_web" class="form-label">Pagina web</label>
-                    <input value="{{ old('pagina_web') }}"
+                    <input
                         type="text" 
                         class="form-control" 
                         name="pagina_web" 
@@ -43,7 +43,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="logo" class="form-label">Logo</label>
-                    <input value="{{ old('logo') }}"
+                    <input 
                         type="file" 
                         class="form-control" 
                         name="logo" 

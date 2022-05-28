@@ -3,11 +3,33 @@
 
 <div class="d-flex justify-content-center">
     <div class="card " style="width: 40%;">
-        <img class="card-img-top" src="{{$company->logo}}" alt="Card image cap">
+        <div class="d-flex justify-content-center">
+            <img class="card-img-top" src="{{$company->logo}}" alt="Card image cap">
+        </div>
         <div class="card-body">
-            <h4>{{$company->name}}</h4>
-            <h4>{{$company->email}}</h4>
-            <h4>{{$company->pagina_web}}</h4>
+            {{-- <h4>Nombre: {{$company->name}}</h4>
+            <h4>Correo: {{$company->email}}</h4>
+            <h4>Pagina Web: {{$company->pagina_web}}</h4>
+            <h4>Cantidad de empleados: {{count($employees)}}</h4> --}}
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Nombre
+                  <span >{{$company->name}}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                 Correo
+                  <span >{{$company->email}}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Pagina Web
+                  <span >{{$company->pagina_web}}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Cantidad de empleados
+                    <span>{{count($employees)}}</span>
+                </li>
+                
+              </ul>
             
         </div>
         <div class="mt-2 pb-2 d-flex justify-content-around">

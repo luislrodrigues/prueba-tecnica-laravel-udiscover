@@ -59,8 +59,8 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
-        
-        return view('company.show',compact('company'));
+        $employees = $company->employees;
+        return view('company.show',compact('company','employees'));
     }
 
     /**
@@ -104,6 +104,7 @@ class CompanyController extends Controller
     public function destroy(Company $company)
     {
         $company->delete();
+        $company->employees()->delete();
         return redirect()->route('company.index');
     }
 }

@@ -18,7 +18,7 @@
                     @Auth
                     <ul class="navbar-nav me-auto"> 
                         <li class="nav-item active"><a class="navbar-brand" href="{{route('company.index')}}">Compañias</a> </li>
-                        <li class="nav-item active"><a class="navbar-brand" href="{{route('company.index')}}">Empleados</a> </li>
+                        <li class="nav-item active"><a class="navbar-brand" href="{{route('employee.index')}}">Empleados</a> </li>
                     </ul>
                     @endAuth
                     <ul class="navbar-nav ms-auto">

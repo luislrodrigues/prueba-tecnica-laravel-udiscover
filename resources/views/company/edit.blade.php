@@ -15,7 +15,7 @@
                         type="text" 
                         class="form-control" 
                         name="name" 
-                        placeholder="Name" required>
+                        placeholder="Name" >
 
                     @if ($errors->has('name'))
                         <span class="text-danger text-left">{{ $errors->first('name') }}</span>
@@ -27,7 +27,7 @@
                         type="email" 
                         class="form-control" 
                         name="email" 
-                        placeholder="Email address" required>
+                        placeholder="Email address" >
                     @if ($errors->has('email'))
                         <span class="text-danger text-left">{{ $errors->first('email') }}</span>
                     @endif
@@ -38,7 +38,7 @@
                         type="text" 
                         class="form-control" 
                         name="pagina_web" 
-                        placeholder="Pagina web" required>
+                        placeholder="Pagina web" >
                     @if ($errors->has('pagina_web'))
                         <span class="text-danger text-left">{{ $errors->first('pagina_web') }}</span>
                     @endif

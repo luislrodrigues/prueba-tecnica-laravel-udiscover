@@ -6,18 +6,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Company extends Model
+class Employee extends Model
 {
     use HasFactory,SoftDeletes;
-    protected $table = 'companies';
+    protected $table = 'employees';
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
-        'logo',
-        'pagina_web',
+        'phone',
+        'company_id',
     ];
-
-    public function employees (){
-        return $this->hasMany(Employee::class);
+    public function company (){
+        return $this->belongsTo(Company::class);
     }
 }
